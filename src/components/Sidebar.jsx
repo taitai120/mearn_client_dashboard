@@ -190,7 +190,6 @@ const Sidebar = ({
                                                               .secondary[200],
                                             }}
                                         >
-                                            {text}
                                             <ListItemIcon
                                                 sx={{
                                                     ml: "2rem",
@@ -201,9 +200,16 @@ const Sidebar = ({
                                                             : theme.palette
                                                                   .secondary[200],
                                                 }}
-                                            ></ListItemIcon>
+                                            >
+                                                {icon}
+                                            </ListItemIcon>
+                                            <ListItemText primary={text} />{" "}
+                                            {active === lcText && (
+                                                <ChevronRightOutlined
+                                                    sx={{ ml: "auto" }}
+                                                />
+                                            )}
                                         </ListItemButton>
-                                        {/* <Link to={`${lcText}`}>{text}</Link> */}
                                     </ListItem>
                                 );
                             })}
